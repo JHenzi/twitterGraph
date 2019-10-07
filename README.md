@@ -29,17 +29,12 @@ The [TwitterGraph Github Repo](https://github.com/clcollins/twitterGraph/) conta
 
 ## Setup InfluxDB
 
-[InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) is an opensource data store designed specifically for time series data.  Since this project will be polling Twitter on a schedule using a Kubernetes CronJob, InfluxDB is perfect for holding storing the data.
-
-The [Docker-maintained InfluxDB Image on DockerHub](https://hub.docker.com/_/influxdb) will work fine for this project.  It works out-of-the-box with both Kubernetes and OKD ([see OKD Considerations below](#okd_considerations)).
+[InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) is an opensource data store designed specifically for time series data.  Since this project will be polling Twitter on a schedule using a CronJob, InfluxDB is perfect for holding storing the data.
 
 
 ## Setup Grafana
 
  [Grafana](https://grafana.com/).  Grafana is an open source project for visualizing time series data (thing: pretty, pretty graphs).
-
-As with Influxdb, [The Official Grafana image on DockerHub, maintained by Grafana](https://hub.docker.com/r/grafana/grafana/) works out-of-the-box for this project, both with Kubernetes and OKD.
-
 
 
 ### Create a Secret for the Twitter API credentials
@@ -47,12 +42,7 @@ As with Influxdb, [The Official Grafana image on DockerHub, maintained by Grafan
 The cron job uses your Twitter API credentials to connect to the API and pull the stats, pulling them from environment variables inside the container.  Create a secret to store the Twitter API credentials and the name of the account to gather the stats from, substituting your own credentials and account name:
 
 ```
-kubectl create secret generic twitter-creds \
-    --from-literal=TWITTER_ACCESS_SECRET=<your twitter access secret> \
-    --from-literal=TWITTER_ACCESS_TOKEN=<your twitter access token> \
-    --from-literal=TWITTER_API_KEY=<your twitter api key > \
-    --from-literal=TWITTER_API_SECRET=<your twitter api secret> \
-    --from-literal=TWITTER_USER=<your twitter username>
+UPDATE ME LATER?
 ```
 
 ### Create a Cron Job
