@@ -1,7 +1,0 @@
-source_me
-secrets.yml
-__pycache__/
-*.key
-*.crt
-*.csr
-*.pem
